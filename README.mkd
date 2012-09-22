@@ -1,0 +1,3 @@
+LINKLOG
+=======
+Personal site to feature links on fly.
