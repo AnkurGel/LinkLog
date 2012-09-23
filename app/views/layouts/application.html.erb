@@ -13,14 +13,30 @@
         <%= link_to "Linklog", '#', id: 'logo'%>
         <nav>
           <ul class = "nav pull-right">
-            <li><%= link_to "Home", '#' %></li>
-            <li><%= link_to "About", '#' %></li>
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "About", about_path  %></li>
+            <% if signed_in? %>
+            <li><%= link_to "Sign out", signout_path, :method =>
+            'delete'  %></li>
+            <% else %>
+            <li>
+              <span class="label label-info">
+
+                <%= link_to "Sign In", signin_path %>
+              </span>
+            </li>
+            <% end %>
           </ul>
         </nav>
       </div>
     </div>
   </header>
   <div class="container">
+    <% flash.each do |k, v| %>
+      <div class = "alert alert-<%= k %>"><%= v %>
+      </div>
+    <% end %>
+                                                   
     <%= yield %>
     <%= render 'layouts/footer' %>
   </div>

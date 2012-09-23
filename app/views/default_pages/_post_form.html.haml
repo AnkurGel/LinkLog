@@ -1,0 +1,6 @@
+=form_for @post do |f|
+  /= render 'default_pages/error_messages', :object => f.object
+  %div.field
+    =f.text_field :title, :placeholder => "Insert title here.. "
+    =f.text_field :link,  :placeholder => "Enter link address here.. "
+  =f.submit "Post", :class => 'btn btn-large'  

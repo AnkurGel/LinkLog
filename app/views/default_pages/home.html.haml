@@ -1,4 +1,15 @@
-%div.center.hero-unit
-  %h1 This is home page for linklog
+-if signed_in?
+  %div.row
+    %aside.span4
+      %section
+        = render 'default_pages/user_info'
+      %section
+        = render 'default_pages/post_form'
+    %div.span8
+      %h3 LinkLog
+      = render 'default_pages/log'
+-else
+  %h2
+    Have to just show feed in one span
 
 

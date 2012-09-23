@@ -1,8 +1,14 @@
 Linklog::Application.routes.draw do
 
-  get "users/new"
+  resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
+  resources :posts, :only => [:create, :destroy]
 
   match '/about', to: 'default_pages#about'
+
+  match '/signin', to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', :via => :delete
+
   root to: 'default_pages#home'
 
   # The priority is based upon order of creation:

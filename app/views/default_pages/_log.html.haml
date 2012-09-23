@@ -1,0 +1,6 @@
+- if @logged_links and @logged_links.any?
+  %ol.posts
+    = render :partial => 'default_pages/log_item', :collection => @logged_links
+  = will_paginate @logged_links
+
+  
