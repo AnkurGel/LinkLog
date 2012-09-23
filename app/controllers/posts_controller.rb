@@ -8,6 +8,7 @@ class PostsController < ApplicationController
       redirect_to root_url
     else
       # in case fails the validation or not saved.
+      @logged_links = User.log.paginate(:page => params[:page])
       render 'default_pages/home'
     end
   end

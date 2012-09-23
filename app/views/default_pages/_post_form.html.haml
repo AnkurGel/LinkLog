@@ -1,5 +1,13 @@
 =form_for @post do |f|
   /= render 'default_pages/error_messages', :object => f.object
+  - if @post.errors.any?
+    %div#error_explanation
+      %div.alert.alert-error
+        The form contains
+        =pluralize(@post.errors.count, 'error')
+      -@post.errors.full_messages.each do |msg|
+        %li
+          =msg
   %div.field
     =f.text_field :title, :placeholder => "Insert title here.. "
     =f.text_field :link,  :placeholder => "Enter link address here.. "
