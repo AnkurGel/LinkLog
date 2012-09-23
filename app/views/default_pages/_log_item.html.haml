@@ -1,3 +1,8 @@
 %li{ :id => "#{log_item.id}" }
+  %span.title
+    =log_item.title.truncate(30) if log_item.title and !log_item.title.nil?
   %span.content
-    = log_item.link
+    = log_item.link.truncate(30)
+  %span.timestamp
+    = time_ago_in_words(log_item.created_at)
+    ago
