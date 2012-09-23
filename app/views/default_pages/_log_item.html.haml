@@ -1,6 +1,6 @@
 %li{ :id => "#{log_item.id}" }
   %span.title
-    =log_item.title.truncate(30) if log_item.title and !log_item.title.nil?
+    =log_item.title if log_item.title and !log_item.title.nil?
   %span.content
     = link_to log_item.link.truncate(30), log_item.link, :target => :blank
   %span.timestamp

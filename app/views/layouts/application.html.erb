@@ -20,10 +20,8 @@
             'delete'  %></li>
             <% else %>
             <li>
-              <span class="label label-info">
-
-                <%= link_to "Sign In", signin_path %>
-              </span>
+                <%= button_to "Sign in", signin_path, :class => 'btn
+                btn-large btn-primary' %>
             </li>
             <% end %>
           </ul>
