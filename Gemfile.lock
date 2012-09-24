@@ -185,6 +185,7 @@ DEPENDENCIES
   factory_girl_rails (= 1.4.0)
   haml-rails
   jquery-rails
+  nokogiri
   pg (= 0.12.2)
   pry-rails
   rails (= 3.2.8)
