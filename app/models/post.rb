@@ -15,7 +15,7 @@ class Post < ActiveRecord::Base
 
   private
   def create_title
-    if self.link
+    if self.link and self.title.empty?
       doc = Nokogiri::HTML(open(self.link))
       doc.search('title').each{ |t| self.title = t.content }
     end
