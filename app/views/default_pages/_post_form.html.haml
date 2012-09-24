@@ -1,3 +1,6 @@
+%span.add_title_block
+  %h3 Add link
+
 =form_for @post do |f|
   /= render 'default_pages/error_messages', :object => f.object
   - if @post.errors.any?

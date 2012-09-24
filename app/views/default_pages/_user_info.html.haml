@@ -1,0 +1,9 @@
+%span.user_block
+  =gravatar_for(current_user ? current_user : User.first)
+  %h2 Ankur Goel
+  %span.social_bar
+    =link_to(image_tag('github.png'), 'http://github.com/AnkurGel', :target => :blank)
+    =link_to(image_tag('twitter.png')    , 'http://twitter.com/AnkurGel', :target => :blank)
+    =link_to(image_tag('facebook.png')   , 'http://facebook.com/AnkurGel', :target => :blank)
+    =link_to(image_tag('posterous.png')  , 'http://ankurgel.posterous.com', :target => :blank)  
+  
