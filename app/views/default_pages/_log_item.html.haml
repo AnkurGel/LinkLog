@@ -1,12 +1,20 @@
 %li{ :id => "#{log_item.id}" }
-  %span.title
-    =log_item.title if log_item.title and !log_item.title.nil?
-  %span.content
-    %blockquote
-      = link_to log_item.link, log_item.link, :target => :blank
-      %span.timestamp
-        = time_ago_in_words(log_item.created_at)
-        ago
   - if signed_in?
-    %span.delete_link
-      =link_to "Delete", log_item, :method => :delete, :data => { :confirm => "You sure, bro?" }, :title => log_item.title
+    - if log_item.private?
+      %span.privatify
+        %i{:class => "icon-lock" }
+    = render 'default_pages/content', :log_item => log_item
+  -else
+    - if log_item.private?
+      %span.privatify
+        %i{:class => "icon-lock" }
+      %span.locked
+        Locked
+      %span.content
+        %blockquote
+          %i Content marked private
+          %span.timestamp
+            = time_ago_in_words(log_item.created_at)
+            ago
+    - else
+      = render 'default_pages/content', :log_item => log_item

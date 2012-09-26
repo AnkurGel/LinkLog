@@ -171,6 +171,26 @@ span.add_title_block {
     }
 }
 
-span.social_bar{ width: 80%; a { float: right; padding: 0 0 0 3px; }}
+span.social_bar{
+    width: 80%;
+    a {
+        float: right;
+        padding: 0 0 0 3px;
+    }
+}
+label.private {
+    display: inline;
+}
+.privatify {
+    label {
+        display: inline;
+    }
+}
 
-    
+span.privatify {
+    float: left;
+    margin-right: 6px;
+}
+span.locked{
+    color: red;
+}

@@ -14,4 +14,8 @@
   %div.field
     =f.text_field :title, :placeholder => "Insert title here.. "
     =f.text_field :link,  :placeholder => "Enter link address here.. "
+    %br
+    =f.check_box :private
+    =f.label :private, "Private?", :class => "private"
+
   =f.submit "Post", :class => 'btn btn-large'  
