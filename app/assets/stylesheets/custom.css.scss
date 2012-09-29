@@ -194,3 +194,8 @@ span.privatify {
 span.locked{
     color: red;
 }
+.icon-star { background-color: lighten(yellow, 10%) };
+span.important {
+    & a{
+    background-color: yellow; }
+}

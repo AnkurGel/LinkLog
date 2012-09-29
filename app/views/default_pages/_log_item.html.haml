@@ -3,6 +3,9 @@
     - if log_item.private?
       %span.privatify
         %i{:class => "icon-lock" }
+    - if log_item.important?
+      %span.privatify
+        %i{:class => "icon-star" }
     = render 'default_pages/content', :log_item => log_item
   -else
     - if log_item.private?

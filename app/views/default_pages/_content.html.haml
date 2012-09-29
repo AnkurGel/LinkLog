@@ -2,7 +2,11 @@
   =log_item.title if log_item.title and !log_item.title.nil?
 %span.content
   %blockquote
-    = link_to log_item.link, log_item.link, :target => :blank
+    - unless log_item.important?
+      = link_to log_item.link, log_item.link, :target => :blank
+    - else
+      %span.important
+        = link_to log_item.link, log_item.link, :target => :blank
     %span.timestamp
       = time_ago_in_words(log_item.created_at)
       ago
