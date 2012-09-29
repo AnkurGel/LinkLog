@@ -11,6 +11,9 @@
     - if log_item.private?
       %span.privatify
         %i{:class => "icon-lock" }
+      - if log_item.important?
+        %span.privatify
+          %i{:class => "icon-star"}
       %span.locked
         Locked
       %span.content
@@ -20,4 +23,7 @@
             = time_ago_in_words(log_item.created_at)
             ago
     - else
+      - if log_item.important?
+        %span.privatify
+          %i{:class => 'icon-star' }
       = render 'default_pages/content', :log_item => log_item
