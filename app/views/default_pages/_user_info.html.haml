@@ -1,6 +1,6 @@
 %span.user_block
   =gravatar_for(current_user ? current_user : User.first)
-  %h2 Ankur Goel
+  %h2=User.first.name
   %span.social_bar
     =link_to(image_tag('posterous.png')  , 'http://ankurgel.posterous.com', :target => :blank)  
     =link_to(image_tag('facebook.png')   , 'http://facebook.com/AnkurGel', :target => :blank)
