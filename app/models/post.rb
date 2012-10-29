@@ -5,9 +5,9 @@ class Post < ActiveRecord::Base
   belongs_to :user
   before_save :create_title
 
-  LINK_FORMAT = /https?:\/\/\S+/
+  LINK_FORMAT = /https?:\/\/\S+\.\S+/
   validates :user_id, :presence => true
-  validates :link,    :presence => true, :format => { :with => LINK_FORMAT, :message => "should start with http or https" },
+  validates :link,    :presence => true, :format => { :with => LINK_FORMAT, :message => "should start with http or https and end with TLD" },
   :uniqueness => true
   validates :title, :uniqueness => true
 
