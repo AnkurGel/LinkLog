@@ -32,11 +32,13 @@ h1 {
 }
 
 h2 {
-  font-size: 1.7em;
+  font:{
+      size: 1.7em;
+      weight: normal;
+  }
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
-  font-weight: normal;
   color: #999;
 }
 
@@ -57,6 +59,13 @@ p {
     padding-top: 9px;
     font-weight: bold;
     line-height: 1;
+    &:hover{
+        color: darken(#fff, 5%);
+        text:{
+            decoration: none;
+            shadow: darken(#fff,15%) 0.1em 0.1em 0.2em;
+        }
+    }
 }
 nav {
   span{
@@ -73,39 +82,26 @@ nav {
   { margin: 0 0 0 0; }
 }
 
-#logo:hover{
-    color: #fff;
-    text-decoration: none;
-}
-
-
 footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #999;
-}
-
-footer a {
-  color: #555;
-}  
-
-footer a:hover { 
-  color: #222;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 10px;
+  a {
+      color: #555;
+      &:hover {
+          color: #222;
+      }
+  }
+  small { float: left; }
+  ul {
+      float: right;
+      list-style: none;
+      li {
+          float: left;
+          margin-left: 10px;
+      }
+  }
 }
 
 aside {
@@ -171,7 +167,7 @@ span.add_title_block {
     }
 }
 
-span.social_bar{
+span.social_bar {
     width: 80%;
     a {
         float: right;
@@ -191,7 +187,7 @@ span.privatify {
     float: left;
     margin-right: 6px;
 }
-span.locked{
+span.locked {
     color: red;
 }
 .icon-star { background-color: lighten(yellow, 10%) };
