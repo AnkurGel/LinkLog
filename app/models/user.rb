@@ -14,8 +14,12 @@ class User < ActiveRecord::Base
 
   has_many :posts, :dependent => :destroy
 
-  def self.log
-    Post.where('user_id = ? ', 1)
+  def self.log(search)
+    if search and !search.blank?
+      Post.where('user_id = ? and (link LIKE ? or title LIKE ?)', 1, "%#{search}%", "%#{search}%")
+    else
+      Post.where('user_id = ? ', 1)
+    end
   end
 
   private
