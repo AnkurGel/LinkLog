@@ -10,9 +10,10 @@
     %span.timestamp
       = time_ago_in_words(log_item.created_at)
       ago
-    %div.tags
-      Tags:
-      = raw log_item.tag_list.map{ |t| link_to t, tag_path(t) }.join(', ')
+    - unless log_item.tag_list.empty?
+      %div.tags
+        Tags:
+        = raw log_item.tag_list.map{ |t| link_to t, tag_path(t) }.join(', ')
 
 - if signed_in?      
   %span.delete_link

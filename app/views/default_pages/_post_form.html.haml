@@ -21,7 +21,10 @@
     =f.label :important, "Important?", :class => "private"
 
     =f.label :tag_list, "Tags"
-    =f.text_field :tag_list
-
+    =f.text_field :tag_list, :id => 'post_tags', "data_pre" => @post.tags.map(&:attributes).to_json
+    
 
   =f.submit "Post", :class => 'btn btn-large'  
+%span.add_title_block
+  %h3 Add Tag
+  = render 'default_pages/tag_form'

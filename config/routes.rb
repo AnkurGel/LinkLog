@@ -8,8 +8,9 @@ Linklog::Application.routes.draw do
 
   match '/signin', to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', :via => :delete
-  get 'tags/:tag', to: 'default_pages#home', :as => :tag
-
+  get '/posts/tags' => 'posts#tags', as: :tags
+  get '/tags/:tag' => 'default_pages#home', as: :tag
+  match '/create_tag' => 'default_pages#create_tag', as: :create_tag
   root to: 'default_pages#home'
 
   # The priority is based upon order of creation:

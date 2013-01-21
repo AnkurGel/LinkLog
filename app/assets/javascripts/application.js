@@ -13,3 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(function() {
+  $("#post_tags").tokenInput("/posts/tags.json", {
+    prePopulate:       $("#post_tags").data("pre"),
+    preventDuplicates: true,
+    noResultsText:     "No results, needs to be created.",
+    animateDropdown:   false,
+    theme: 'facebook'
+  });
+});

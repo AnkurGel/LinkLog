@@ -1,0 +1,5 @@
+= form_for @tag, :as => :tag, :url => create_tag_path do |f|
+  = f.label :name
+  = f.text_field :name
+
+  = f.submit "Create", :class => "btn btn-large"

@@ -2,6 +2,7 @@ class DefaultPagesController < ApplicationController
   def home
     if signed_in?
       @post = current_user.posts.build
+      @tag = ActsAsTaggableOn::Tag.new
     end
 
     if params[:tag]
@@ -16,5 +17,15 @@ class DefaultPagesController < ApplicationController
   end
 
   def about
+  end
+
+  def create_tag
+    if params[:tag]["name"]
+      @tag = ActsAsTaggableOn::Tag.new(:name => params[:tag]["name"].downcase)
+      unless @tag.save
+        flash[:error] = "Problem in creating tag. It may already exist"
+      end
+    end
+    redirect_to root_path
   end
 end
