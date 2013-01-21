@@ -8,6 +8,7 @@ Linklog::Application.routes.draw do
 
   match '/signin', to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', :via => :delete
+  get 'tags/:tag', to: 'default_pages#home', :as => :tag
 
   root to: 'default_pages#home'
 

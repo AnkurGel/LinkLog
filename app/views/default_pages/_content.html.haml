@@ -10,6 +10,10 @@
     %span.timestamp
       = time_ago_in_words(log_item.created_at)
       ago
+    %div.tags
+      Tags:
+      = raw log_item.tag_list.map{ |t| link_to t, tag_path(t) }.join(', ')
+
 - if signed_in?      
   %span.delete_link
     =link_to "Delete", log_item, :method => :delete, :data => { :confirm => "You sure, bro?" }, :title => log_item.title

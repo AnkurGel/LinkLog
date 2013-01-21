@@ -1,7 +1,8 @@
 class Post < ActiveRecord::Base
   require 'nokogiri'
   require 'open-uri'
-  attr_accessible :link, :title, :private, :important
+  attr_accessible :link, :title, :private, :important, :tag_list
+  acts_as_taggable
   belongs_to :user
   before_save :create_title
 

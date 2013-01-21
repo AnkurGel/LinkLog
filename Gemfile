@@ -7,6 +7,7 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'nokogiri'
+gem 'acts-as-taggable-on'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
