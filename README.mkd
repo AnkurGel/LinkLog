@@ -5,6 +5,15 @@ Personal site to feature links on fly.
 ### Production: ###
 [http://ankurlinklog.herokuapp.com](http://ankurlinklog.herokuapp.com)
 
+### Features: ###
+* Update: Added awesome tagging support.
+* Update: Search your links, easily.
+* Mark links as _important_ while creating. Distinguishes from bulk.
+* Your personal links are your and yours alone. Mark link as _private_, only you can view them then.
+* In hurry? Left the title of link blank? No worries, it will fetch the title from page on it's own.
+* Access anywhere.
+* Customize anything!
+
 ### How to use: ###
 * Clone the project.
 * Run `bundle install`
