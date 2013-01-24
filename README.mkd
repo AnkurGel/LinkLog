@@ -14,6 +14,8 @@ Personal site to feature links on fly.
 * Access anywhere.
 * Customize anything!
 
+![Screenshot](http://i.imgur.com/iBgS4zD.png)
+
 ### How to use: ###
 * Clone the project.
 * Run `bundle install`
